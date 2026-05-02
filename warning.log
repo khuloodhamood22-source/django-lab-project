@@ -22,3 +22,12 @@ WARNING 2026-04-25 14:20:00,659 views 10560 16780 Homepage was accessed at 2026-
 WARNING 2026-04-25 14:22:11,692 views 10560 16780 Homepage was accessed at 2026-04-25 14:22:11.692909 hours!
 WARNING 2026-04-25 14:25:24,301 views 20368 10780 Homepage was accessed at 2026-04-25 14:25:24.301665 hours!
 WARNING 2026-04-25 14:33:26,037 views 9788 11612 Homepage was accessed at 2026-04-25 14:33:26.037959 hours!
+WARNING 2026-04-28 14:17:48,128 log 9 130774775132928 Not Found: /favicon.ico
+WARNING 2026-04-28 15:24:33,528 log 9 128182028419840 Not Found: /static/admin/css/base.css
+WARNING 2026-04-28 15:24:33,557 log 9 128182028419840 Not Found: /static/admin/css/dark_mode.css
+WARNING 2026-04-28 15:24:33,583 log 9 128182028419840 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2026-04-28 15:24:33,607 log 9 128182028419840 Not Found: /static/admin/css/login.css
+WARNING 2026-04-28 15:24:33,627 log 9 128182028419840 Not Found: /static/admin/css/responsive.css
+WARNING 2026-04-28 15:24:33,652 log 9 128182028419840 Not Found: /static/admin/js/theme.js
+WARNING 2026-04-28 15:24:33,678 log 9 128182028419840 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2026-04-28 15:24:33,732 log 9 128182028419840 Not Found: /favicon.ico

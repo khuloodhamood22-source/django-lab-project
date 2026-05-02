@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+from starlette.config import Config
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONFIG = Config(BASE_DIR / '.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,12 +25,19 @@ TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%9b07(@ual67p$cz#5!=^guar4h$vqjaken*r6vhcqk9tkr!4l'
+SECRET_KEY = CONFIG.get('SECRET_KEY', cast=str, default='')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = CONFIG.get('PROJECT_DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+ALLOWED_ORIGINS = ['http://127.0.0.1:81']
+
+CSRF_TRUSTED_ORIGINS = ALLOWED_ORIGINS.copy()
+
+SESSION_COOKIE_SECURE = CONFIG.get('SESSION_COOKIE_SECURE', cast=bool, default=True)
+
+CSRF_COOKIE_SECURE = CONFIG.get('CSRF_COOKIE_SECURE', cast=bool, default=True)
 
 
 # Application definition
@@ -125,8 +135,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
